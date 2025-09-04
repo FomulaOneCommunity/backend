@@ -1,0 +1,92 @@
+server:
+  address: ${SERVER_ADDRESS:0.0.0.0}
+  port: ${SERVER_PORT:9443}
+  ssl:
+    enabled: ${SERVER_SSL_ENABLED:true}
+    key-store: ${SERVER_SSL_KEY_STORE:classpath:keystore.p12}
+    key-store-password: ${SERVER_SSL_KEY_STORE_PASSWORD:Panda7521ok!}
+    key-store-type: ${SERVER_SSL_KEY_STORE_TYPE:PKCS12}
+    key-alias: ${SERVER_SSL_KEY_ALIAS:myssl}
+  servlet:
+    session:
+      timeout: ${SERVER_SERVLET_SESSION_TIMEOUT:1h}
+
+spring:
+  servlet:
+    multipart:
+      enabled: ${SPRING_SERVLET_MULTIPART_ENABLED:true}
+      max-file-size: ${SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE:10MB}
+      max-request-size: ${SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE:20MB}
+  jpa:
+    properties:
+      hibernate:
+        dialect: ${SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT:org.hibernate.dialect.MySQL8Dialect}
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:validate}
+    show-sql: ${SPRING_JPA_SHOW_SQL:true}
+  data:
+    redis:
+      host: ${SPRING_DATA_REDIS_HOST:localhost}
+      port: ${SPRING_DATA_REDIS_PORT:6379}
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:prod}
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/f1_community?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:Panda7521ok!}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME:com.mysql.cj.jdbc.Driver}
+
+  mail:
+    host: ${SPRING_MAIL_HOST:smtp.gmail.com}
+    port: ${SPRING_MAIL_PORT:587}
+    username: ${SPRING_MAIL_USERNAME:seok7521@gmail.com}
+    password: ${SPRING_MAIL_PASSWORD:isnnzjylwexheglz}
+    properties:
+      mail:
+        debug: ${SPRING_MAIL_PROPERTIES_MAIL_DEBUG:true}
+        smtp:
+          auth: ${SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH:true}
+          starttls:
+            enable: ${SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE:true}
+            required: ${SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_REQUIRED:true}
+          ssl:
+            trust: ${SPRING_MAIL_PROPERTIES_MAIL_SMTP_SSL_TRUST:smtp.gmail.com}
+          connectiontimeout: ${SPRING_MAIL_PROPERTIES_MAIL_SMTP_CONNECTIONTIMEOUT:5000}
+          timeout: ${SPRING_MAIL_PROPERTIES_MAIL_SMTP_TIMEOUT:5000}
+          writetimeout: ${SPRING_MAIL_PROPERTIES_MAIL_SMTP_WRITETIMEOUT:5000}
+
+jwt:
+  secret: ${JWT_SECRET:1160402ed239a5fb562b0233cfa44e6a91fad4bc2a6284c58884db8df35583dde8868889b933db86f0b59993cf39a926e3446d5645f383c178c955da927023fe}
+
+logging:
+  level:
+    root: ${LOGGING_LEVEL_ROOT:INFO}
+    org.hibernate.SQL: ${LOGGING_LEVEL_ORG_HIBERNATE_SQL:INFO}
+    org.apache.tomcat.util.compat: ${LOGGING_LEVEL_ORG_APACHE_TOMCAT_UTIL_COMPAT:WARN}
+    org.apache.tomcat.util.compat.Jre22Compat: ${LOGGING_LEVEL_ORG_APACHE_TOMCAT_UTIL_COMPAT_JRE22COMPAT:OFF}
+    org.springframework.mail.javamail: ${LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_MAIL_JAVAMAIL:DEBUG}
+    org.eclipse.angus.mail.smtp: ${LOGGING_LEVEL_ORG_ECLIPSE_ANGUS_MAIL_SMTP:DEBUG}
+
+upload:
+  path: ${UPLOAD_PATH:/home/mindung/f1community/uploads/profile-images}
+
+default:
+  profile-image: ${DEFAULT_PROFILE_IMAGE:/home/mindung/f1community/uploads/profile-images/default.png}
+
+cors:
+  allowed-origins:
+    - ${CORS_ALLOWED_ORIGIN_0:http://localhost:3000}
+    - ${CORS_ALLOWED_ORIGIN_1:http://127.0.0.1:3000}
+    - ${CORS_ALLOWED_ORIGIN_2:http://192.168.35.193:3000}
+    - ${CORS_ALLOWED_ORIGIN_3:https://114.204.9.108:9443}
+    - ${CORS_ALLOWED_ORIGIN_4:https://114.204.9.108:10443}
+
+app:
+  password-reset:
+    expiry-minutes: ${APP_PASSWORD_RESET_EXPIRY_MINUTES:30}
+    redis-prefix: ${APP_PASSWORD_RESET_REDIS_PREFIX:pwd:reset:}
+    frontend-base-url: ${APP_PASSWORD_RESET_FRONTEND_BASE_URL:http://localhost:3000}
+    reset-path: ${APP_PASSWORD_RESET_RESET_PATH:passwordReset}
+    default-locale: ${APP_PASSWORD_RESET_DEFAULT_LOCALE:en}
+    allowed-locales: ${APP_PASSWORD_RESET_ALLOWED_LOCALES:en,ko}
+    prefix-default-locale: ${APP_PASSWORD_RESET_PREFIX_DEFAULT_LOCALE:true}
