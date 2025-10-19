@@ -14,7 +14,7 @@ public enum ErrorCode {
     PASSWORD_MISSING_REQUIREMENTS("Password must include uppercase, lowercase, number, and special character."),
     PASSWORD_CONTAINS_FORBIDDEN_WORD("Password contains too easy word: %s"),
     PASSWORD_CONTAINS_USER_INFO("Password cannot contain user information (name, email, birth date, etc.)."),
-    USER_NOT_FOUND("User '%s' not found."),
+    USER_NOT_FOUND("user '%s' not found."),
     MAIL_AUTH_FAILED("Failed to authenticate with the mail server. Please contact the administrator."),
 
     // 🟩 File / Image Upload
@@ -22,10 +22,10 @@ public enum ErrorCode {
     PROFILE_IMAGE_UPLOAD_FAILED("Failed to upload profile image."),
     FILE_SIZE_EXCEEDED("File size exceeded. Maximum allowed is 10MB."),
 
-    // 🟦 Post
-    POST_NOT_FOUND("Post not found."),
+    // 🟦 post
+    POST_NOT_FOUND("post not found."),
 
-    // 🟨 Common
+    // 🟨 common
     INVALID_TOKEN("The token is invalid or has expired."),
     GENERIC_ERROR("A server error has occurred.");
 

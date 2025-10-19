@@ -1,8 +1,9 @@
 package com.f1community.backend.user.service;
 
-import com.f1community.backend.user.domain.User;
-import com.f1community.backend.user.dto.request.UserSignupRequestDto;
-import com.f1community.backend.user.repository.UserRepository;
+import com.f1community.backend.domain.user.User;
+import com.f1community.backend.dto.user.request.UserSignupRequestDto;
+import com.f1community.backend.domain.user.UserRepository;
+import com.f1community.backend.service.user.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

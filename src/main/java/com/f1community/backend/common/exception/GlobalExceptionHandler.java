@@ -1,9 +1,9 @@
 package com.f1community.backend.common.exception;
 
-import com.f1community.backend.admin.exception.AdminUserNotFoundException;
+import com.f1community.backend.common.exception.User.*;
+import com.f1community.backend.common.exception.Admin.AdminUserNotFoundException;
 import com.f1community.backend.common.response.ErrorResponse;
-import com.f1community.backend.post.exception.PostNotFoundException;
-import com.f1community.backend.user.exception.*;
+import com.f1community.backend.common.exception.Post.PostNotFoundException;
 import jakarta.mail.AuthenticationFailedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

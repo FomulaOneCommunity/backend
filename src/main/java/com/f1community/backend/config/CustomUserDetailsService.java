@@ -1,7 +1,7 @@
 package com.f1community.backend.config;
 
-import com.f1community.backend.user.domain.User;
-import com.f1community.backend.user.repository.UserRepository;
+import com.f1community.backend.domain.user.User;
+import com.f1community.backend.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.*;
