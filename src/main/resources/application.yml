@@ -68,10 +68,10 @@ logging:
     org.eclipse.angus.mail.smtp: ${LOGGING_LEVEL_ORG_ECLIPSE_ANGUS_MAIL_SMTP:DEBUG}
 
 upload:
-  path: ${UPLOAD_PATH:/home/mindung/f1community/uploads/profile-images}
+  path: ${UPLOAD_PATH:/home/teamproject/f1community/uploads/profile-images}
 
 default:
-  profile-image: ${DEFAULT_PROFILE_IMAGE:/home/mindung/f1community/uploads/profile-images/default.png}
+  profile-image: ${DEFAULT_PROFILE_IMAGE:/home/teamproject/f1community/uploads/profile-images/default.png}
 
 cors:
   allowed-origins:
